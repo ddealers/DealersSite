@@ -428,3 +428,48 @@ section{
 a.button{
 	@include button;
 }
+div.page-content{
+	background: #017176;
+	width: 100%;
+	height: 100%;
+	header.post-header{
+		padding-top: 105px;
+		padding-left: 100px;
+	}
+		h1.post-title{
+			color: #fff;
+		}
+		p{
+			color: #A69C94;
+		}
+	article.post-content{
+		background-color: #00b8bf;
+		padding: 50px;
+		width: 855px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 25px;
+		bottom: 0;
+		display: block;
+		margin: auto;
+		height: 203px;
+		color: #fff;
+		p{
+			color: #757571;
+			width: 300px;
+			line-height: 25px;
+		}
+		h1#new-american-framework{
+			margin-bottom: 10px;
+			width: 300px;
+		}
+		img{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			left: 350px;
+		}
+	}
+}
