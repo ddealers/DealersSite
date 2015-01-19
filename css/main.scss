@@ -1,0 +1,430 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+$base-font-size:   15px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.2;
+
+$spacing-unit:     30px;
+
+$title:		#333;
+$content:	#666;
+$subtitle:	#017176;
+$greenbg:	#017176;
+$digital:	#00b8bf;
+$menu: 		#00575a;
+$menu-link: #333;
+
+$content-width:	800px;
+
+$x-small:		700px;
+$small:			800px;
+$medium:		1024px;
+$large:			1180px;
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+//@import "foundation";
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+@mixin button($font-size:1rem){
+	display: block;
+	background: #017175;
+	color: #00575a;
+	padding: $font-size * 0.025 $font-size * 1;
+	text-align: center;
+	text-shadow: none;
+	text-decoration: none;
+	@include border-radius(20px);
+}
+@mixin border-radius($radius: 5px){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin background-size($bgurl){
+	background: url($bgurl) no-repeat center right fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+@mixin filter($filters){
+	-webkit-filter: $filters;
+	filter: $filters;
+}
+
+.row{
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	.col-1{
+		flex: 1 100%;
+	}
+	.col-2{
+		flex: 1 50%;
+		@include  media-query($x-small){
+			flex: 1 100%;
+		}
+	}
+	.col-3{
+		flex: 1 33%;
+		@include media-query($x-small){
+			flex: 1 100%;
+		}
+	}
+	.col-4{
+		flex: 1 25%;
+		@include media-query($x-small){
+			flex: 1 100%;
+		}
+	}
+	.col-5{
+		flex: 1 20%;
+		@include media-query($x-small){
+			flex: 1 100%;
+		}
+	}
+}
+
+@include media-query($x-small){
+	.x-small-hide{
+		display: none;
+	}
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: $base-font-family;
+	line-height: 1.2;
+}
+html{
+	font-size: $base-font-size;
+	width: 100%;
+	height: 100%;
+	@include media-query($x-small){
+		font-size: $base-font-size - 5;
+	}
+}
+body{ 
+	width: 100%;
+	height: 100%;
+}
+nav{
+	font-size: 0.9rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 5rem;
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	.logo{
+		width: 30%;
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		@include filter(opacity(0.8) drop-shadow(2px 2px 3px black));
+		@include media-query($x-small){
+			left: 1rem;
+			margin: auto;
+			width: 70%;
+		}
+	}
+	.menu-logo{
+		width: 10rem;
+		margin: 0 5%;
+	}
+	.menu-icon{
+		margin-right: 5%;
+		width: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: $menu;
+		text-decoration: none;
+		@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.2)));
+		&:hover{
+			color: $digital;
+			@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0)));
+		}
+		span{
+			font-size: 2rem;
+		}
+	}
+	aside{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background: rgba(0,184,191,0.85);
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		.ion-close{
+			position: absolute;
+			right: 3rem;
+			top: 3rem;
+			margin: 0.5rem;
+			color: white;
+			font-size: 3rem;
+			&:hover{
+				color: $title;
+				@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.3)));
+			}
+		}
+		ul{
+			list-style-type: none;
+			width: 100%;
+			li{
+				width: 100%;
+				padding: 2rem;
+				font-size: 1rem;
+				box-sizing: border-box;
+				@include filter(drop-shadow(-2px 0 10px rgba(0,0,0,0.2)));
+				a{
+					font-size: 5rem;
+					color: white;
+					display: block;
+					text-align: center;
+					text-decoration: none;
+					text-transform: uppercase;
+					&:hover{
+						color: $title;
+						@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.3)));
+					}
+				}
+			}
+		}
+	}
+}
+section{
+	height: 100%;
+	width: 100%;
+	padding: 6rem 5%;
+	box-sizing: border-box;
+	display: flex;
+	@include media-query($medium){
+		padding: 8% 5%;		
+	}
+	@include media-query($x-small){
+		padding: 15% 10%;		
+	}
+	h2{
+		font-size: 2rem;
+		color: #fff;
+		margin: 1rem 0;
+		border-bottom: 2px solid #56B8B5;
+		width: 11rem;
+	}
+	h3{
+		padding: .5rem 0;
+		min-height: 1.5rem;
+		font-size: 1.5rem;
+		color: $subtitle;
+	}
+	h2.nosotros{
+		color: #757571;
+	}
+	&#home{
+		@include background-size('/imgs/home_back.png');
+		align-items: center;
+		article{
+			text-align: right;
+			font-size: 2.7rem;
+			color: $digital;
+			text-shadow: 1px 1px 8px black;
+			h1{
+				color: white;
+				font-weight: bold;
+			}
+			p{
+				font-size: 2.7rem;
+				line-height: 1.2;
+			}
+			a.hire{
+				margin-top: 2rem;
+				text-transform: capitalize;
+				font-weight: bold;
+				float: right;
+				@include button(4rem);
+				&:hover{
+					background: #00575a;
+					color: #017175;
+					box-shadow: 1px 1px 8px black;
+				}
+			}
+		}
+		@include media-query($x-small){
+			justify-content: center;
+			article{
+				text-align: center;
+			}
+		}
+	}
+	&#about{
+		flex-flow: column wrap;
+		.title{
+			flex: 0 100%;
+			h2{
+				width: 20%;
+			}
+		}
+		ul{
+			list-style-type: square;
+			margin-left: 1rem;
+		}
+		p,li{
+			color: $content;
+		}
+		img{
+			margin: 2rem auto;
+			width: 100%;
+			@include media-query($x-small){
+				display: none;
+			}
+		}
+	}
+	&#portfolio{
+		flex-flow: column wrap;
+		background: $greenbg;
+		.title{
+			flex: 1 100%;
+			h2{
+				margin: 1rem auto;
+			}
+			p{
+				color: white;
+				margin: 0 auto;
+			}
+		}
+		ul{
+			list-style-type: none;
+			margin: 0 auto;
+			width: 100%;
+			flex: 6 100%;
+			display: flex;
+			justify-content: center;
+			flex-flow: row wrap;
+			li{
+				flex: 1 20%;
+				position: relative;
+				div{
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					background-color: $digital;
+					background-size: cover;
+				}
+				a{
+					font-size: 1rem;
+					color: white;
+					text-decoration: none;
+					text-transform: uppercase;
+					text-overflow: ellipsis;
+					display: block;
+					width:  100%;
+					height: 1rem;
+					overflow: hidden;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					text-align: center;
+				}
+			}
+		}
+		.rss-subscribe{
+			color: $menu;
+			text-align: right;
+			a{
+				color: $menu;
+				text-decoration: none;
+				&:hover{
+					color: white;
+				}
+			}
+		}
+	}
+	&#contact{
+		flex-flow: column wrap;
+		@include background-size('/imgs/background.jpg');
+		.title{
+			flex: 0 100%;
+			align-items: center;
+			h2{
+				margin: 1rem auto;
+			}
+			p{
+				font-size: 2rem;
+				text-align: center;
+				color: white;
+				margin-bottom: 1rem;
+			}
+		}
+		.address{
+			flex: 1 100%;
+			align-items: center;
+			iframe{
+				order: 2;
+				margin: 0 auto;
+				flex: 5 10%;
+			}
+			p{
+				order: 1;
+				flex: 1 10%;
+				color: white;
+				padding: 1rem;
+				font-size: 0.9rem;
+				text-align: right;
+			}
+		}
+		.social{
+			flex: 1 100%;
+			a{
+				@include button;
+				height: 2rem;
+				box-sizing: border-box;
+				padding: 0.5rem;
+				margin: 1rem;
+				text-align: left;
+				position: relative;
+				&:hover{
+					background: $menu;
+					color: white;
+					box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+				}
+				span{
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0.5rem;
+					margin: auto;
+					width: 1.4rem;
+					height: 1.4rem;
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}
+a.button{
+	@include button;
+}

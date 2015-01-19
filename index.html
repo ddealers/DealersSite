@@ -1,0 +1,121 @@
+---
+layout: default
+---
+<section id="home">
+	<article>
+		<h1>WE LOVE TO DO</h1>
+		<p>Innovative ideas</p>
+		<p>Amazing projects</p>
+		<p>Impossible things</p>
+		<a href="mailto:be@digitaldealers.mx" class="hire">Contr&aacute;tanos!</a>
+	</article>
+</section>
+<section id="about">
+	<div class="title">
+		<h2 class="nosotros">NOSOTROS</h2>
+	</div>
+	<p>Somos una agencia de desarrollo establecida en el área metropolitana de la Ciudad de México. Desarrollamos toda idea que nos permita aprender, crecer y jugar con nuevas ideas o tecnologías.</p> 
+	<p>Nuestros clientes nos buscan porque creamos websites, mobile apps e interactive media. Quizás también porque acudimos al rescate de proyectos con problemas cuando nos lo solicitan, o muy probablemente porque saben que nuestro fin es que todo proyecto en el que colaboramos sea una inversión que aumentará el valor de su negocio.</p>
+	<p>(Nosotros creemos que se debe a que siempre tenemos dulces y galletas...)</p>
+	<img src="imgs/cookies.png">
+	<div class="row">
+		<div class="col-3">
+			<h3>HE AQUÍ NUESTROS SERVICIOS</h3>
+			<ul>
+				<li>Mobile Apps<br />(iOS, Android, Windows Phone)</li>
+				<li>Websites</li>
+				<li>Webapps</li>
+				<li>e-commerce</li>
+				<li>Micrositios</li>
+				<li>Personalización de CMS</li>
+				<li>Arquitectura de la Información</li>
+				<li>Modelado de Datos</li>
+				<li>Analytics</li>
+			</ul>
+		</div>
+		<div class="col-3">
+			<h3>Y NUESTROS LENGUAJES</h3>
+			<ul>
+				<li>Java/Android</li>
+				<li>Obj-C/Swift</li>
+				<li>Angular.js</li>
+				<li>Easel.js</li>
+				<li>Coffescript</li>
+				<li>Ruby on Rails</li>
+				<li>Laravel PHP</li>
+				<li>.NET</li>
+			</ul>
+		</div>
+		<div class="col-3">
+			<ul>
+				<h3 class="x-small-hide"></h3>
+				<li>Processing</li>
+				<li>Arduino</li>
+				<li>Node.js</li>
+				<li>AS3/Adobe AIR</li>
+				<li>Apache</li>
+				<li>NGINX</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section id="portfolio">
+	<div class="title row">
+		<div class="col-2">
+			<h2>PORTAFOLIO</h2>
+		</div>
+		<p class="col-2">Damos todo en nuestros proyectos trabajándolos con el detalle y la dedicación que cada uno merece. ¿La razón? Creemos que el trabajo no vale el esfuerzo si no tienes pasión y amor por las cosas que creas y en las que contribuyes.</p>
+	</div>
+	<ul class="portfolio-list">
+		{% for project in site.portfolios %}
+			<li>
+				<div style="background-image:url({{ project.image | prepend: project.baseurl }})"></div> 
+				<a class="portfolio-link" href="{{ project.url | prepend: project.baseurl }}">{{ project.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<ul class="blog-list">
+		{% for post in site.posts %}
+			<li>
+				<div style="background-image:url({{ post.image | prepend: post.baseurl }})"></div> 
+				<a class="portfolio-link" href="{{ post.url | prepend: post.baseurl }}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</section>
+<section id="contact">
+	<div class="title row">
+		<div class="col-1">
+			<h2>CONTACTO</h2>
+		</div>
+		<p class="col-1">Encuéntranos, contrátanos, únetenos.</p>
+	</div>
+	<div class="address row">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15042.505375765524!2d-99.0405251!3d19.514705349999996!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1420456068271" width="600" height="350" frameborder="0" style="border:0"></iframe>
+		<p>Venustiano Carranza 68A,<br />Valle de Anáhuac. C.P. 55210<br />Ecatepec, Estado de México.<br />Tel: 01 (55) 6366 4517</p>
+	</div>
+	<div class="social row">
+		<a class="col-5" target="_blank" href="mailto:be@digitaldealers.mx" rel="publisher">
+			<span class="ion-paper-airplane"></span>be@digitaldealers
+		</a>
+		<a class="col-5" target="_blank" href="https://www.facebook.com/digitaldealers" rel="publisher">
+			<span class="ion-social-facebook"></span>digitaldealers
+		</a>
+		<a class="col-5" target="_blank" href="https://twitter.com/bedealers" rel="publisher">
+			<span class="ion-social-twitter"></span>bedealers
+		</a>
+		<a class="col-5" target="_blank" href="https://plus.google.com/101119363870414979431" rel="publisher">
+			<span class="ion-social-googleplus"></span>Digital Dealers
+		</a>
+	</div>
+</section>
+<script>
+	/*
+	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	e.src='//www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	ga('create','UA-40504202-1');ga('send','pageview');*/
+</script>
