@@ -1,4 +1,4 @@
-<header class="site-header">
+<!--header class="site-header">
 	<div class="wrapper">
 		<nav class="bg-opacity" ng-class="{active:logo}" main-menu>
 			<img class="fade logo" ng-show="logo" src="/imgs/logo_bn.svg" alt="{{ site.title }}">
@@ -14,9 +14,16 @@
 					<li><a href="#about">Nosotros</a></li>
 					<li><a href="#portfolio">Portafolio</a></li>
 					<!--<li><a href="makerz">Makerz</a></li>-->
-					<li><a href="#contact">Contacto</a></li>
+					<!--li><a href="#contact">Contacto</a></li>
 				</ul>
 			</aside>
 		</nav>
   	</div>
-</header>
+</header!-->
+
+{% for project in site.portfolios %}
+			<li>
+				<div style="background-image:url({{ project.image | prepend: project.baseurl }})"></div> 
+				<a class="portfolio-link" href="{{ project.url | prepend: project.baseurl }}">{{ project.title }}</a>
+			</li>
+		{% endfor %}

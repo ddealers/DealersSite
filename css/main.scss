@@ -455,21 +455,56 @@ div.page-content{
 		margin: auto;
 		height: 203px;
 		color: #fff;
+		-webkit-filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.2));
 		p{
 			color: #757571;
-			width: 300px;
+			width: 295px;
 			line-height: 25px;
 		}
 		h1#new-american-framework{
-			margin-bottom: 10px;
 			width: 300px;
 		}
+
 		img{
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			margin: auto;
 			left: 350px;
+		}
+			a.link{
+				color: #00575a;
+				text-decoration: none;
+			}
+			a:hover{
+					color: #fff;
+					background: none;
+				}
+	}
+	div {
+		a.button-post{
+			position: absolute;
+			bottom: 80px;
+			height: 34px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			display: block;
+			width: 200px;
+			font-size: 16px;
+			border-radius: 50px;
+			background: #00575a;
+			color: #017175;
+			border-style: none;
+			font-weight: bolder;
+			text-align: center;
+			text-decoration: none;
+			padding-top: 15px;
+		}
+			a:hover{
+				background: #016875;
+				color: #00575a;
+				-webkit-filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.2));
 		}
 	}
 }

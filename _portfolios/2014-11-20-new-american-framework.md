@@ -12,3 +12,6 @@ categories: ['e-learning','html5']
 **Cliente:** Richmond
 
 **Desarrollo:** 
+<br><br>
+**Link:**
+<a class="link" href="#" target="blank"> </a>

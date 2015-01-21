@@ -3,7 +3,7 @@ title: Digital Dealers
 email: be@digitaldealers.mx
 description: > # this means to ignore newlines until "baseurl:"
   Developing Interactive & Mobile Apps for you. Innovative ideas, amazing projects, impossible things, the things we love to do.
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "127.0.0.1:4000/" # the subpath of your site, e.g. /blog/
 url: "http://digitaldealers.mx" # the base hostname & protocol for your site
 angular_version: 1.2.28
 twitter_username: bedealers
