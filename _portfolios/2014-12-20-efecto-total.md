@@ -14,4 +14,4 @@ categories: mobile
 **Desarrollo:** 
 <br><br>
 **Link:**
-<a class="link" href="#" target="blank"> </a>
+<a class="link" href="https://itunes.apple.com/es/app/efecto-total/id944598978" target="blank"> iTunes Store</a>
