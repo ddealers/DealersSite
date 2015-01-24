@@ -1,17 +1,17 @@
 ---
 layout:	post
-title:	"Quiniela camaleon"
+title:	"Quiniela camaleón"
 image:	"imgs/portfolios/Quiniela-camaleon-FRONT.png"
 date:   2014-11-19 03:00:00
-categories: mobile
+categories: website
 ---
 ![Quiniela camaleon]({{ "/imgs/portfolios/Quiniela-camaleon-BACK.png" | prepend: site.baseurl }})
 
-#Quiniela camaleon
+#Quiniela camaleón
 
-**Cliente:** Camaleon
+**Cliente:** Camaleón
 
-**Desarrollo:** 
+**Desarrollo:** Desarrollado con HTML5, MySQL y PHP
 <br><br>
 **Link:**
 <a class="link" href="#" target="blank"> No disponible</a>

@@ -11,7 +11,7 @@ categories: ['e-learning','html5']
 
 **Cliente:** Richmond
 
-**Desarrollo:** 
+**Desarrollo:** Formularios desarrollados en HTML5 y CSS3 para una plataforma de E Learning
 <br><br>
 **Link:**
-<a class="link" href="#" target="blank"> </a>
+<a class="link" href="#" target="blank"> No disponible</a>

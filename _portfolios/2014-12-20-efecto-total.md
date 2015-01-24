@@ -11,7 +11,7 @@ categories: mobile
 
 **Cliente:** MyVoga
 
-**Desarrollo:** 
+**Desarrollo:** App desarrollada con IONIC framework para iOS y Android
 <br><br>
 **Link:**
 <a class="link" href="https://itunes.apple.com/es/app/efecto-total/id944598978" target="blank"> iTunes Store</a>

@@ -9,9 +9,9 @@ categories: ['e-learning','html5']
 
 #Ideas en Orden
 
-**Cliente:** Baum3
+**Cliente:** Ideas en Orden
 
-**Desarrollo:** 
+**Desarrollo:** Interactivo que permite al usuario hacer un mueble a su medida, utilizando HTML5 y jQuery
 <br><br>
 **Link:**
 <a class="link" href="http://ideasenorden.mx/" target="blank"> www.ideasenorden.mx</a>
