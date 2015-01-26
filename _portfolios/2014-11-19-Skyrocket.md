@@ -14,4 +14,4 @@ categories: [canvas,interactive,games]
 **Desarrollo:** Objetos de aprendizaje desarrollados con HTML5 Canvas y Create.js
 <br><br>
 **Link:**
-<a class="link" href="http://richmond.digitaldealers.mx/skyrocket/nivel4" target="blank"> richmond.digitaldealers.mx/skyrocket/nivel4</a>
+<a class="link" href="http://richmond.digitaldealers.mx/skyrocket/index.html" target="blank"> skyrocket/nivel4</a>
