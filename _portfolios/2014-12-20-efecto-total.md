@@ -3,6 +3,7 @@ layout:	post
 title:	"Efecto Total"
 image:	"imgs/portfolios/efecto_total_screenshot.png"
 date:   2015-01-05 03:00:00
+description: App desarrollada con IONIC framework para iOS y Android
 categories: mobile
 ---
 ![Efecto Total]({{ "/imgs/portfolios/efecto-t.png" | prepend: site.baseurl }})

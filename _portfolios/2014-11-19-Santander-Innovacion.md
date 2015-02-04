@@ -3,6 +3,7 @@ layout:	post
 title:	"Santander Innovación"
 image:	"imgs/portfolios/Santander-Innovacion-FRONT.png"
 date:   2014-11-19 03:00:00
+description: Single page application con Laravel PHP y jQuery
 categories: website
 ---
 ![Santander Innovación]({{ "/imgs/portfolios/Santander-Innovacion-BACK.png" | prepend: site.baseurl }})

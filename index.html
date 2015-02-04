@@ -66,12 +66,33 @@ layout: default
 		</div>
 		<p class="col-2">Damos todo en nuestros proyectos trabajándolos con el detalle y la dedicación que cada uno merece. ¿La razón? Creemos que el trabajo no vale el esfuerzo si no tienes pasión y amor por las cosas que creas y en las que contribuyes.</p>
 	</div>
-	<ul class="portfolio-list">
+	<!--ul class="portfolio-list"-->
+	<ul id="og-grid" class="og-grid">
 		{% for project in site.portfolios %}
-			<li>
+		<li>
+			<a href="{{ project.url | prepend: project.baseurl }}"data-largesrc="background-image:url({{ project.image | prepend: project.baseurl }}"data-title="{{ project.title }}"data-description="">
+				<img src="{{ project.image | prepend: project.baseurl }}" alt="{{ project.title }}">
+			</a>
+			<div class="og-expander">
+				<div class="og-expander-inner">
+					<span class="og-close"></span>
+					<div  class="og-fullimg">
+						<div class="og-loading"></div>
+						<img src="{{ project.image | prepend: project.baseurl }}">
+					</div>
+					<div class="og-details">
+		                <h3>{{ project.title }}</h3>
+		                <p>{{ project.description }}</p>
+		                <a href="{{ project.url | prepend: project.baseurl }}">{{Visit website}}</a>
+		            </div>
+		        </div>
+		   </div>
+		</li>
+
+			<!--li>
 				<div style="background-image:url({{ project.image | prepend: project.baseurl }})"></div> 
 				<a class="portfolio-link" href="{{ project.url | prepend: project.baseurl }}">{{ project.title }}</a>
-			</li>
+			</li-->
 		{% endfor %}
 	</ul>
 	<ul class="blog-list">
@@ -118,4 +139,9 @@ layout: default
 	e.src='//www.google-analytics.com/analytics.js';
 	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 	ga('create','UA-40504202-1');ga('send','pageview');*/
+
+	// list of items
+
+ 
+}	
 </script>
