@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-5n portfolio-back" style="background-image:url({{ page.image }});"></div>
+	<div class="col-5 portfolio-meta">
+		<h1 class="portfolio-title">{{ page.title }}</h1>
+		<article class="portfolio-content">
+			{{ content }}
+			{% if page.link %}
+			<a class="portfolio-meta-link" href="{{ page.link }}" target="_blank"><i class="ion-link"></i></a>
+			{% endif %}
+			<p class="portfolio-date">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+		</article>
+	</div>
+</div>

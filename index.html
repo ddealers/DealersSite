@@ -12,7 +12,7 @@ layout: default
 </section>
 <section id="about">
 	<div class="title">
-		<h2 class="nosotros">NOSOTROS</h2>
+		<h2 class="grey">NOSOTROS</h2>
 	</div>
 	<p>Somos una agencia de desarrollo establecida en el área metropolitana de la Ciudad de México. Desarrollamos tod lo que nos permita aprender, crecer y jugar con nuevas ideas o tecnologías.</p> 
 	<p>Nuestros clientes nos buscan porque creamos websites, mobile apps e interactive media. Quizás también porque acudimos al rescate de proyectos con problemas cuando nos lo solicitan, o muy probablemente porque saben que nuestro fin es que todo proyecto en el que colaboramos sea una inversión que aumentará el valor de su negocio.</p>
@@ -59,7 +59,7 @@ layout: default
 		</div>
 	</div>
 </section>
-<section id="portfolio">
+<section id="portfolio" ng-controller="PortfolioController">
 	<div class="title row">
 		<div class="col-2">
 			<h2>PORTAFOLIO</h2>
@@ -67,23 +67,43 @@ layout: default
 		<p class="col-2">Damos todo en nuestros proyectos trabajándolos con el detalle y la dedicación que cada uno merece. ¿La razón? Creemos que el trabajo no vale el esfuerzo si no tienes pasión y amor por las cosas que creas y en las que contribuyes.</p>
 	</div>
 	<ul class="portfolio-list">
-		{% for project in site.portfolios %}
+		{% for project in site.portfolios reversed %}
 			<li>
-				<div style="background-image:url({{ project.image | prepend: project.baseurl }})"></div> 
-				<a class="portfolio-link" href="{{ project.url | prepend: project.baseurl }}">{{ project.title }}</a>
+				<div style="background-image:url({{ project.thumb | prepend: project.baseurl }})"></div>
+				<a class="portfolio-link" ng-click="showPortfolio($event)" href="{{ project.url | prepend: project.baseurl }}">
+					<span class="ion-more"></span>
+				</a> 
 			</li>
 		{% endfor %}
 	</ul>
+	<div class="portfolio-template fade" ng-hide="!portfolioUrl">
+		<a href="#" class="ion-close close-menu" ng-click="hidePortfolio($event)"></a>
+		<div class="portfolio-data" ng-include="portfolioUrl"></div>
+	</div>
+</section>
+<!--section id="makerz">
+	<div class="title">
+		<h2 class="grey">MAKERZ</h2>
+	</div>
+</section-->
+<!--section id="blog">
+	<div class="title row">
+		<div class="col-2">
+			<h2 class="grey">BLOG</h2>
+		</div>
+	</div>
 	<ul class="blog-list">
 		{% for post in site.posts %}
 			<li>
-				<div style="background-image:url({{ post.image | prepend: post.baseurl }})"></div> 
-				<a class="portfolio-link" href="{{ post.url | prepend: post.baseurl }}">{{ post.title }}</a>
+				<a href="{{ post.url | prepend: post.baseurl }}">
+					<h3>{{ post.title }}</h3>
+					{{ post.excerpt }}
+				</a>
 			</li>
 		{% endfor %}
 	</ul>
 	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</section>
+</section-->
 <section id="contact">
 	<div class="title row">
 		<div class="col-1">
