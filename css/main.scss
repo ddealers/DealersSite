@@ -94,6 +94,12 @@ $large:			1180px;
 			flex: 1 100%;
 		}
 	}
+	.col-5n{
+		flex: 1 80%;
+		@include media-query($x-small){
+			flex: 1 100%;
+		}
+	}
 }
 
 @include media-query($x-small){
@@ -165,6 +171,7 @@ nav{
 		}
 	}
 	aside{
+		perspective: 500px;
 		width: 100%;
 		height: 100%;
 		position: fixed;
@@ -182,32 +189,33 @@ nav{
 			top: 3rem;
 			margin: 0.5rem;
 			color: white;
-			font-size: 3rem;
-			&:hover{
+			font-size: 2.5rem;
+			/*&:hover{
 				color: $title;
 				@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.3)));
-			}
+			}*/
 		}
 		ul{
 			list-style-type: none;
 			width: 100%;
 			li{
-				width: 100%;
-				padding: 2rem;
+				width: 80%;
+				margin: 0 auto;
+				padding: 1.5rem;
 				font-size: 1rem;
 				box-sizing: border-box;
 				@include filter(drop-shadow(-2px 0 10px rgba(0,0,0,0.2)));
 				a{
-					font-size: 5rem;
+					font-size: 3rem;
 					color: white;
 					display: block;
 					text-align: center;
 					text-decoration: none;
 					text-transform: uppercase;
-					&:hover{
+					/*&:hover{
 						color: $title;
 						@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.3)));
-					}
+					}*/
 				}
 			}
 		}
@@ -238,7 +246,7 @@ section{
 		font-size: 1.5rem;
 		color: $subtitle;
 	}
-	h2.nosotros{
+	h2.grey{
 		color: #757571;
 	}
 	&#home{
@@ -300,9 +308,18 @@ section{
 			}
 		}
 	}
+	&#makerz{
+		flex-flow: column wrap;
+		title{
+			flex: 0 100%;
+			h2{
+				width: 20%;
+			}
+		}
+	}
 	&#portfolio{
 		flex-flow: column wrap;
-		background: $greenbg;
+		background: $greenbg url(../imgs/digicubes.png);
 		.title{
 			flex: 1 100%;
 			h2{
@@ -324,30 +341,167 @@ section{
 			li{
 				flex: 1 20%;
 				position: relative;
+				margin: 0.3rem;
+				overflow: hidden;
 				div{
 					width: 100%;
 					height: 100%;
 					position: absolute;
-					background-color: $digital;
+					background-color: black;
 					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center center;
+					border-bottom-right-radius: 20px;
+					border-top-left-radius: 20px;
 				}
 				a{
-					font-size: 1rem;
-					color: white;
-					text-decoration: none;
-					text-transform: uppercase;
-					text-overflow: ellipsis;
+					background: rgba(0,184,191,0.85);
+					color: $menu;
 					display: block;
-					width:  100%;
-					height: 1rem;
-					overflow: hidden;
-					position: absolute;
+					width:  6rem;
+					height: 6rem;
 					top: 0;
+					bottom: 0;
 					left: 0;
 					right: 0;
-					bottom: 0;
 					margin: auto;
+					border-radius: 100px;
 					text-align: center;
+					text-decoration: none;
+					padding: 1rem;
+					box-sizing: border-box;
+					position: absolute;
+					box-shadow: 2px 2px 20px black;
+					@include media-query($x-small){
+						width:  5rem;
+						height: 5rem;
+					}
+					span{
+						position: absolute;
+						top: 0;
+						left: 0;
+						bottom: 0;
+						right: 0;
+						margin: auto;
+						height: 4rem;
+						font-size: 4rem;
+						@include media-query($x-small){
+							height: 2rem;
+							font-size: 2rem;
+						}
+					}
+				}
+			}
+		}
+		.portfolio-template{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			color: white;
+			top: 0;
+			left: 0;
+			background: rgba(0,184,191,0.85);
+			z-index: 5;
+			.ion-close{
+				position: absolute;
+				right: 3rem;
+				top: 3rem;
+				margin: 0.5rem;
+				color: white;
+				font-size: 2.5rem;
+			}
+			.portfolio-data{
+				height: 65%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				font-size: 1rem;
+				> div{
+					height: 100%;
+					box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+					background-color: $digital;
+					.portfolio-back{
+						background-repeat: no-repeat;
+						background-color: $digital;
+						background-position: 50% 50%;
+						background-size: cover;
+					}
+					.portfolio-meta{
+						background: #eee;
+						box-shadow: -5px 0px 25px rgba(0,0,0,0.3);
+						color: #fff;
+						padding: 1rem;
+						box-sizing: border-box;
+						border-left: $digital 3px solid;
+						@include media-query($x-small){
+							width: 40%;
+						}
+						.portfolio-title{
+							color: #666;
+							font-size: 3rem;
+							text-align: center;
+							margin-bottom: 1rem;
+						}
+						.portfolio-content{
+							color: #999;
+							.portfolio-meta-link{
+								width: 3rem;
+								height: 3rem;
+								border-radius: 100px;
+								font-size: 3rem;
+								background: $digital;
+								color: #fff;
+								display: block;
+								text-align: center;
+								padding: 0.5rem;
+								margin: 2.5rem auto;
+								@include media-query($x-small){
+									margin: 0.5rem auto;
+								}
+							}
+							.portfolio-date{
+								text-align: right;
+								margin-top: 1rem;
+								color: #ccc;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&#blog{
+		flex-flow: column wrap;
+		background: url(../imgs/digicubes.png);
+		title{
+			flex: 0 100%;
+			h2{
+				width: 20%;
+			}
+		}
+		.blog-list{
+			list-style-type: none;
+			li{
+				margin: 0.5rem 0;
+				padding: 1rem;
+				border-color: $content;
+				border-width: 2px;
+				border-style: solid;
+				height: 2rem;
+				overflow: hidden;
+				a{
+					text-decoration: none;
+					h3{
+						color: $subtitle;
+					}
+					p{
+						opacity: 0;
+						transform: translateY(-10px);
+						color: $content;
+					}
 				}
 			}
 		}
@@ -358,7 +512,7 @@ section{
 				color: $menu;
 				text-decoration: none;
 				&:hover{
-					color: white;
+					color: $digital;
 				}
 			}
 		}
@@ -428,6 +582,7 @@ section{
 a.button{
 	@include button;
 }
+/*
 div.page-content{
 	background: #017176;
 	width: 100%;
@@ -508,6 +663,7 @@ div.page-content{
 		}
 	}
 }
+<<<<<<< HEAD
 .og-grid {
     list-style: none;
     padding: 20px 0;
@@ -676,3 +832,6 @@ div.page-content{
     .og-details { float: none; width: 100%; }
      
 }
+=======
+*/
+>>>>>>> 7e42c4127f144f2bf7a3e59fae6b4d113e73d27c

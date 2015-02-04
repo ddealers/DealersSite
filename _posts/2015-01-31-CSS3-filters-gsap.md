@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "CSS3 Filters con GSAP"
-date:   2015-01-17 03:36:00
-categories: [gsap, css3-filters, animation]
+date:   2015-01-31 03:36:00
+categories: [code, snippet, gsap, css3-filters, animation, interactive]
 ---
 Soy muy fan de la librería de GSAP desde que era TweenMax para AS3, además de que sigue pateando traseros a las animaciones de jQuery, Angular, las nativas de CSS3 y se da un quienvive con famo.us.
 
