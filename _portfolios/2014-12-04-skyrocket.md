@@ -1,11 +1,11 @@
 ---
 layout:	portfolio
 title:	"Skyrocket"
-image:	"imgs/portfolios/Skyrocket-FRONT.png"
+image:	"imgs/portfolios/Skyrocket-BACK.png"
 date:   2014-12-04 00:00:00
 categories: [canvas,interactive,games]
 ---
-![Skyrocket]({{ "/imgs/portfolios/Skyrocket-BACK.png" | prepend: site.baseurl }})
+![Skyrocket]({{ "/imgs/portfolios/Skyrocket-FRONT.png" | prepend: site.baseurl }})
 
 **Cliente:** Richmond
 
