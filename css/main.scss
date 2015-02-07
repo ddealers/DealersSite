@@ -660,15 +660,11 @@ section{
 		@include box-sizing(border-box);
 		margin: 0 auto;
 		width: 70%;
-		display: flex;
-		display: -webkit-flex;
-		@include media-query($x-small){
-			@include flex-flow(column nowrap);
-		}
 		.post-content{
-			@include flex(1 85%);
+			width: 85%;
+			float: left;
 			@include media-query($x-small){
-				@include flex(1 100%);
+				width: 100%;
 			}
 			.post-header{
 				text-align: center;
@@ -707,12 +703,13 @@ section{
 			}
 		}
 		aside{
-			@include flex(1 15%);
+			width: 15%;
+			float: left;
 			@include media-query($x-small){
-				@include flex(1 100%);
+				width: 100%;
 			}
 			ul{
-				margin-top: 1rem;
+				margin-top: 4rem;
 				list-style-type: none;
 				li{
 					a{
