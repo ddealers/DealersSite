@@ -28,6 +28,7 @@ $large:			1180px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 //@import "foundation";
+@import "css3-mixins";
 
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
@@ -50,6 +51,31 @@ $large:			1180px;
 	-o-border-radius: $radius;
 	border-radius: $radius;
 }
+@mixin flex($val){
+	-webkit-flex: $val;
+	-moz-flex: $val;
+	-ms-flex: $val;
+	flex: $val;
+}	
+@mixin flex-flow($val){
+	-webkit-flex-flow: $val;
+	-moz-flex-flow: $val;
+	flex-flow: $val;
+}
+@mixin justify-content($val){
+	-webkit-justify-content: $val;
+	-moz-justify-content: $val;
+	justify-content: $val;
+}
+@mixin align-items($val){
+	-webkit-align-items: $val;
+	align-items: $val;
+}
+@mixin perspective($val){
+	-webkit-perspective: $val;
+	-moz-perspective: $val;
+	perspective: $val;
+}
 @mixin background-size($bgurl){
 	background: url($bgurl) no-repeat center right fixed;
 	-webkit-background-size: cover;
@@ -57,7 +83,6 @@ $large:			1180px;
 	-o-background-size: cover;
 	background-size: cover;
 }
-
 @mixin filter($filters){
 	-webkit-filter: $filters;
 	filter: $filters;
@@ -65,39 +90,40 @@ $large:			1180px;
 
 .row{
 	display: flex;
-	flex-flow: row wrap;
+	display: -webkit-flex;
+	@include flex-flow(row wrap);
 	width: 100%;
 	.col-1{
-		flex: 1 100%;
+		@include flex(1 100%);
 	}
 	.col-2{
-		flex: 1 50%;
+		@include flex(1 50%);
 		@include  media-query($x-small){
-			flex: 1 100%;
+			@include flex(1 100%);
 		}
 	}
 	.col-3{
-		flex: 1 33%;
+		@include flex(1 33%);
 		@include media-query($x-small){
-			flex: 1 100%;
+			@include flex(1 100%);
 		}
 	}
 	.col-4{
-		flex: 1 25%;
+		@include flex(1 25%);
 		@include media-query($x-small){
-			flex: 1 100%;
+			@include flex(1 100%);
 		}
 	}
 	.col-5{
-		flex: 1 20%;
+		@include flex(1 20%);
 		@include media-query($x-small){
-			flex: 1 100%;
+			@include flex(1 100%);
 		}
 	}
 	.col-5n{
-		flex: 1 80%;
+		@include flex(1 80%);
 		@include media-query($x-small){
-			flex: 1 100%;
+			@include flex(1 100%);
 		}
 	}
 }
@@ -138,9 +164,10 @@ nav{
 	z-index: 1;
 	width: 100%;
 	height: 5rem;
-	justify-content: space-between;
-	align-items: center;
+	@include justify-content(space-between);
+	@include align-items(center);
 	display: flex;
+	display: -webkit-flex;
 	.logo{
 		width: 30%;
 		position: absolute;
@@ -161,8 +188,9 @@ nav{
 		margin-right: 5%;
 		width: 4rem;
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		display: -webkit-flex;
+		@include align-items(center);
+		@include justify-content(space-between);
 		color: $menu;
 		text-decoration: none;
 		@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.2)));
@@ -175,7 +203,7 @@ nav{
 		}
 	}
 	aside{
-		perspective: 500px;
+		@include perspective(500px);
 		width: 100%;
 		height: 100%;
 		position: fixed;
@@ -183,9 +211,10 @@ nav{
 		top: 0;
 		background: rgba(0,184,191,0.85);
 		display: flex;
-		flex-flow: column;
-		align-items: center;
-		justify-content: center;
+		display: -webkit-flex;
+		@include flex-flow(column);
+		@include align-items(center);
+		@include justify-content(center);
 		overflow: hidden;
 		.ion-close{
 			position: absolute;
@@ -194,10 +223,6 @@ nav{
 			margin: 0.5rem;
 			color: white;
 			font-size: 2.5rem;
-			/*&:hover{
-				color: $title;
-				@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.3)));
-			}*/
 		}
 		ul{
 			list-style-type: none;
@@ -207,7 +232,7 @@ nav{
 				margin: 0 auto;
 				padding: 1.5rem;
 				font-size: 1rem;
-				box-sizing: border-box;
+				@include box-sizing(border-box);
 				@include filter(drop-shadow(-2px 0 10px rgba(0,0,0,0.2)));
 				a{
 					font-size: 3rem;
@@ -216,10 +241,6 @@ nav{
 					text-align: center;
 					text-decoration: none;
 					text-transform: uppercase;
-					/*&:hover{
-						color: $title;
-						@include filter(drop-shadow(5px 5px 3px rgba(0,0,0,0.3)));
-					}*/
 				}
 			}
 		}
@@ -229,8 +250,9 @@ section{
 	height: 100%;
 	width: 100%;
 	padding: 6rem 5%;
-	box-sizing: border-box;
+	@include box-sizing(border-box);
 	display: flex;
+	display: -webkit-flex;
 	@include media-query($medium){
 		padding: 8% 5%;		
 	}
@@ -255,7 +277,7 @@ section{
 	}
 	&#home{
 		@include background-size('/imgs/home_back.png');
-		align-items: center;
+		@include align-items(center);
 		article{
 			text-align: right;
 			font-size: 2.7rem;
@@ -278,21 +300,21 @@ section{
 				&:hover{
 					background: #00575a;
 					color: #017175;
-					box-shadow: 1px 1px 8px black;
+					@include box-shadow(1px 1px 8px black);
 				}
 			}
 		}
 		@include media-query($x-small){
-			justify-content: center;
+			@include justify-content(center);
 			article{
 				text-align: center;
 			}
 		}
 	}
 	&#about{
-		flex-flow: column wrap;
+		@include flex-flow(column wrap);
 		.title{
-			flex: 0 100%;
+			@include flex(0 100%);
 			h2{
 				width: 20%;
 			}
@@ -313,19 +335,19 @@ section{
 		}
 	}
 	&#makerz{
-		flex-flow: column wrap;
+		@include flex-flow(column wrap);
 		title{
-			flex: 0 100%;
+			@include flex(0 100%);
 			h2{
 				width: 20%;
 			}
 		}
 	}
 	&#portfolio{
-		flex-flow: column wrap;
+		@include flex-flow(column wrap);
 		background: $greenbg url(../imgs/digicubes.png);
 		.title{
-			flex: 1 100%;
+			@include flex(1 100%);
 			h2{
 				margin: 1rem auto;
 			}
@@ -338,12 +360,13 @@ section{
 			list-style-type: none;
 			margin: 0 auto;
 			width: 100%;
-			flex: 6 100%;
+			@include flex(6 100%);
 			display: flex;
-			justify-content: center;
-			flex-flow: row wrap;
+			display: -webkit-flex;
+			@include justify-content(center);
+			@include flex-flow(row wrap);
 			li{
-				flex: 1 20%;
+				@include flex(1 20%);
 				position: relative;
 				margin: 0.3rem;
 				overflow: hidden;
@@ -377,9 +400,9 @@ section{
 					text-align: center;
 					text-decoration: none;
 					padding: 1rem;
-					box-sizing: border-box;
+					@include box-sizing(border-box);
 					position: absolute;
-					box-shadow: 2px 2px 20px black;
+					@include box-shadow(2px 2px 20px black);
 					@include media-query($x-small){
 						width:  5rem;
 						height: 5rem;
@@ -402,9 +425,10 @@ section{
 			}
 		}
 		.portfolio-paginator{
-			flex: 0 100%;
+			@include flex(0 100%);
 			display: flex;
-			justify-content: center;
+			display: -webkit-flex;
+			@include justify-content(center);
 			.portfolio-paginator-option{
 				color: white;
 				font-size: 1.5rem;
@@ -442,7 +466,7 @@ section{
 				font-size: 1rem;
 				> div{
 					height: 100%;
-					box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+					@include box-shadow(0px 0px 15px rgba(0,0,0,0.7));
 					background-color: $digital;
 					.portfolio-back{
 						background-repeat: no-repeat;
@@ -452,10 +476,10 @@ section{
 					}
 					.portfolio-meta{
 						background: #eee;
-						box-shadow: -5px 0px 25px rgba(0,0,0,0.3);
+						@include box-shadow(-5px 0px 25px rgba(0,0,0,0.3));
 						color: #fff;
 						padding: 1rem;
-						box-sizing: border-box;
+						@include box-sizing(border-box);
 						border-left: $digital 3px solid;
 						@include media-query($x-small){
 							width: 40%;
@@ -495,10 +519,10 @@ section{
 		}
 	}
 	&#blog{
-		flex-flow: column wrap;
+		@include flex-flow(column wrap);
 		background: url(../imgs/digicubes.png);
 		title{
-			flex: 0 100%;
+			@include flex(0 100%);
 			h2{
 				width: 20%;
 			}
@@ -519,8 +543,8 @@ section{
 						color: $subtitle;
 					}
 					p{
-						opacity: 0;
-						transform: translateY(-10px);
+						@include opacity(0);
+						@include transform(translateY(-10px));
 						color: $content;
 					}
 				}
@@ -539,11 +563,11 @@ section{
 		}
 	}
 	&#contact{
-		flex-flow: column wrap;
+		@include flex-flow(column wrap);
 		@include background-size('/imgs/background.jpg');
 		.title{
-			flex: 0 100%;
-			align-items: center;
+			@include flex(0 100%);
+			@include align-items(center);
 			h2{
 				margin: 1rem auto;
 			}
@@ -555,16 +579,16 @@ section{
 			}
 		}
 		.address{
-			flex: 1 100%;
-			align-items: center;
+			@include flex(1 100%);
+			@include align-items(center);
 			iframe{
 				order: 2;
 				margin: 0 auto;
-				flex: 5 10%;
+				@include flex(5 10%);
 			}
 			p{
 				order: 1;
-				flex: 1 10%;
+				@include flex(1 10%);
 				color: white;
 				padding: 1rem;
 				font-size: 0.9rem;
@@ -572,11 +596,11 @@ section{
 			}
 		}
 		.social{
-			flex: 1 100%;
+			@include flex(1 100%);
 			a{
 				@include button;
 				height: 2rem;
-				box-sizing: border-box;
+				@include box-sizing(border-box);
 				padding: 0.5rem;
 				margin: 1rem;
 				text-align: left;
@@ -584,7 +608,7 @@ section{
 				&:hover{
 					background: $menu;
 					color: white;
-					box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+					@include box-shadow(1px 1px 8px rgba(0,0,0,0.3));
 				}
 				span{
 					position: absolute;
@@ -616,17 +640,18 @@ section{
 	}
 	.post{
 		padding: 7rem 0;
-		box-sizing: border-box;
+		@include box-sizing(border-box);
 		margin: 0 auto;
 		width: 70%;
 		display: flex;
+		display: -webkit-flex;
 		@include media-query($x-small){
-			flex-flow: column;
+			@include flex-flow(column);
 		}
 		.post-content{
-			flex: 1 85%;
+			@include flex(1 85%);
 			@include media-query($x-small){
-				flex: 1 100%;
+				@include flex(1 100%);
 			}
 			.post-header{
 				text-align: center;
@@ -665,9 +690,9 @@ section{
 			}
 		}
 		aside{
-			flex: 1 15%;
+			@include flex(1 15%);
 			@include media-query($x-small){
-				flex: 1 100%;
+				@include flex(1 100%);
 			}
 			ul{
 				margin-top: 1rem;
