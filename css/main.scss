@@ -722,6 +722,9 @@ section{
 							background: $menu-link;
 							color: $digital;
 						}
+						@include media-query($x-small){
+							font-size: 1.2rem;
+						}
 					}
 				}
 			}
