@@ -599,6 +599,7 @@ section{
 				@include media-query($x-small){
 					@include flex(1 100%);
 					text-align: center;
+					font-size: 1.5rem;
 				}
 			}
 		}
