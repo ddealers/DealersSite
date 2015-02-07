@@ -314,7 +314,7 @@ section{
 	&#about{
 		@include flex-flow(column wrap);
 		.title{
-			@include flex(0 100%);
+			//@include flex(0 100%);
 			h2{
 				width: 20%;
 			}
