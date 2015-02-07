@@ -585,6 +585,9 @@ section{
 				order: 2;
 				margin: 0 auto;
 				@include flex(5 10%);
+				@include media-query($x-small){
+					display: none;
+				}
 			}
 			p{
 				order: 1;
