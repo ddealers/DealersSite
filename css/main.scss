@@ -365,6 +365,9 @@ section{
 			display: -webkit-flex;
 			@include justify-content(center);
 			@include flex-flow(row wrap);
+			@include media-query($x-small){
+				@include flex(1 100%);
+			}
 			li{
 				@include flex(1 20%);
 				position: relative;
