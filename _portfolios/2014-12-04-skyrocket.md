@@ -1,7 +1,7 @@
 ---
 layout:	portfolio
 title:	"Skyrocket"
-thumb:  "/imgs/portfolios/Skyrocket-FRONT.png"
+thumb:  "imgs/portfolios/Skyrocket-FRONT.png"
 image:	"imgs/portfolios/Skyrocket-BACK.png"
 link:   "http://richmond.digitaldealers.mx/skyrocket/index.html"
 date:   2014-12-04 00:00:00

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<section id="home">
+<section id="home" ng-controller="HomeController">
 	<article>
 		<h1>WE LOVE TO DO</h1>
 		<p>Innovative ideas</p>
@@ -76,6 +76,7 @@ layout: default
 			</li>
 		{% endfor %}
 	</ul>
+	<div class="portfolio-paginator"></div>
 	<div class="portfolio-template fade" ng-hide="!portfolioUrl">
 		<a href="#" class="ion-close close-menu" ng-click="hidePortfolio($event)"></a>
 		<div class="portfolio-data" ng-include="portfolioUrl"></div>
@@ -86,14 +87,14 @@ layout: default
 		<h2 class="grey">MAKERZ</h2>
 	</div>
 </section-->
-<!--section id="blog">
+<section id="blog">
 	<div class="title row">
 		<div class="col-2">
 			<h2 class="grey">BLOG</h2>
 		</div>
 	</div>
 	<ul class="blog-list">
-		{% for post in site.posts %}
+		{% for post in site.posts limit: 10 %}
 			<li>
 				<a href="{{ post.url | prepend: post.baseurl }}">
 					<h3>{{ post.title }}</h3>
@@ -103,7 +104,7 @@ layout: default
 		{% endfor %}
 	</ul>
 	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</section-->
+</section>
 <section id="contact">
 	<div class="title row">
 		<div class="col-1">

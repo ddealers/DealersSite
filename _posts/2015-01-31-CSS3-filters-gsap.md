@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "CSS3 Filters con GSAP"
+author: vampaynani
 date:   2015-01-31 03:36:00
 categories: [code, snippet, gsap, css3-filters, animation, interactive]
 ---

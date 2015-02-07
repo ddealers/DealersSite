@@ -1,17 +1,33 @@
----
-layout: default
----
-<div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-  <div>
-  	<a class="button-post" href="{{ site.url }}#blog">REGRESAR</a>
-  </div>
-</div>
+<!DOCTYPE html>
+<html ng-app="siteDealers">
+  {% include head.html %}
+  <body class="post-container">
+    <header class="post-header">
+      <a href="{{ "#/blog" | prepend:site.url }}"><img class="fade menu-logo" src="/imgs/logo.svg" alt="{{ site.title }}"></a>
+    </header>
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+          <div class="post-content">
+            <header class="post-header">
+              <h1 class="post-title">{{ page.title }}</h1>
+              <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+            </header>
+            <article class="post-body">
+              {{ content }}
+            </article>
+          </div>
+          <aside>
+            <ul>
+              {% for post in site.posts %}
+                <li>
+                  <a href="{{ post.url | prepend: post.baseurl }}">{{ post.title }}</a>
+                </li>
+              {% endfor %}
+           </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

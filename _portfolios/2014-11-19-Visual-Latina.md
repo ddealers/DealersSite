@@ -2,7 +2,7 @@
 layout:	portfolio
 title:	"Visual Latina"
 thumb:	"imgs/portfolios/Visual-Latina-FRONT.png"
-image:  "/imgs/portfolios/Visual-Latina-BACK.png"
+image:  "imgs/portfolios/Visual-Latina-BACK.png"
 link:   "http://lymbik.com/visuallatina/web4/"
 date:   2014-11-19 00:00:00
 categories: website

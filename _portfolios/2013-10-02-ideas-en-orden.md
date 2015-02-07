@@ -1,14 +1,13 @@
 ---
 layout:	portfolio
 title:	"Ideas en Orden"
-image:	"imgs/portfolios/ideas-closet.png"
+thumb:	"imgs/portfolios/ideas-closet.png"
+image:  "imgs/portfolios/i-closets.png"
+link:   "http://ideasenorden.mx/closets/interiores-de-closet/disena-tu-closet/"
 date:   2013-10-02 00:00:00
-categories: ['e-learning','html5']
+categories: ['html5']
 ---
-![Ideas en Orden]({{ "/imgs/portfolios/i-closets.png" | prepend: site.baseurl }})
 
 **Cliente:** Ideas en Orden
 
-**Desarrollo:** Interactivo que permite al usuario hacer un mueble a su medida, utilizando HTML5 y jQuery
-<br><br>
-<a class="link" href="http://ideasenorden.mx/" target="blank"> www.ideasenorden.mx</a>
+**Desarrollo:** Interactivo que permite al usuario hacer un mueble a su medida, utilizando el api de Drag & drop de HTML5 y jQuery.

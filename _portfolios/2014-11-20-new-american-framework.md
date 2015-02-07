@@ -1,7 +1,7 @@
 ---
 layout:	portfolio
 title:	"New American Framework"
-thumb:  "/imgs/portfolios/naf_screenshot.png"
+thumb:  "imgs/portfolios/naf_screenshot.png"
 image:	"imgs/portfolios/new-framework.jpg"
 date:   2014-11-20 00:00:00
 categories: ['e-learning','html5']

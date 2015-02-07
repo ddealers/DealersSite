@@ -2,9 +2,14 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 app = angular.module 'siteDealers',['ngAnimate']
-app.run()		
+app.run()
 .config ($interpolateProvider)->
 	$interpolateProvider.startSymbol('//-').endSymbol('-//');
+.controller 'HomeController', ($location)->
+	if $location.path()
+		$(window).load ()->
+			section = angular.element $location.path().replace('/','#')
+			window.scrollTo 0, section.offset().top
 .controller 'PortfolioController', ($scope, $http)->
 	$scope.portfolioUrl = null
 	$scope.showPortfolio = (e)->
@@ -24,7 +29,7 @@ app.run()
 		w.on 'resize', (e)->
 			elem.css 'min-height', $window.innerHeight+'px'
 
-.directive 'mainMenu', ($window, $document, $interval)->
+.directive 'mainMenu', ($window, $document, $interval, $location)->
 	parallax = (scope, first)->
 		stop = $interval( ()->
 			wt = $window.scrollY
@@ -75,7 +80,9 @@ app.run()
 			scroll = y: getScrollY()
 			if isOpen
 				tl = new TimelineLite()
-				tl.to window, 0.4, {scrollTo:{y: section.offset().top}, ease: Sine.easeOut}
+				tl.to window, 0.4, {scrollTo:{y: section.offset().top}, ease: Sine.easeOut, onComplete:()->
+					$location.path anchor.attr('href').replace('#', '/')
+				}
 				tl.to 'aside', 0.4, {width: 0, ease: Back.easeIn}
 				tl.to 'nav', 0.2, {top:0, ease: Back.easeOut}
 				isOpen = false
@@ -104,24 +111,47 @@ app.run()
 		elem.on 'mouseleave', (e)->
 			TweenLite.to elem, 0.4, {color:'#FFF', backgroundColor: '#00b8bf', ease: Power2.easeOut}
 
-.directive 'portfolioList', ()->
-	pageItems = 12
-	totalItems = 0
-	totalPages = 0
-	currentPage = 0
-	gotoPage = (pageNum, items)->
-		startFrom = pageNum * pageItems
-		endOn = startFrom + pageItems
-		items.css('display', 'none').slice(startFrom, endOn).css('display', 'block')
-		currentPage = pageNum
+.directive 'portfolioPaginatorOption', ()->
 	restrict: 'C'
 	link: (scope, elem, attrs)->
-		items = elem.find 'li'
-		totalItems = items.size()
-		totalPages = Math.ceil totalItems / pageItems
-		gotoPage currentPage, items
+		elem.on 'mouseenter', (e)->
+			TweenLite.to elem, 0.4, {color: '#00b8bf', scale:1, ease: Power2.easeOut}
+		elem.on 'mouseleave', (e)->
+			TweenLite.to elem, 0.4, {color: '#ffffff', scale:1, ease: Power2.easeOut}
+		elem.on 'click', (e)->
+			TweenLite.to elem, 0.3, {scale: 0.8}
+			angular.element('.portfolio-paginator-option').removeClass('active')
+			elem.addClass('active')
+			TweenLite.to elem, 0.3, {scale: 1, ease: Back.easeOut, delay: 0.3}
+
+.directive 'portfolioList', ($compile)->
+	restrict: 'C'
+	link: (scope, elem, attrs)->
+		scope.gotoPage = (pageNum)->
+			startFrom = pageNum * pageItems
+			endOn = startFrom + pageItems
+
+			TweenMax.to scope.items, 0.3, {opacity: 0, ease: Power2.easeOut, onComplete:()->
+				scope.items.addClass 'hide'	
+				scope.items.slice(startFrom, endOn).removeClass('hide')
+				TweenMax.set scope.items.slice(startFrom, endOn), {rotationX: -90}
+				TweenMax.staggerTo scope.items.slice(startFrom, endOn), 1, {rotationX: 0, opacity:1, ease: Back.easeOut}, 0.1
+			}
+			scope.currentPage = pageNum
 		
-		items.each ()->
+		pageItems = 12
+		totalItems = 0
+		totalPages = 0
+		scope.currentPage = 0
+		scope.items = elem.find 'li'
+		totalItems = scope.items.size()
+		totalPages = Math.ceil totalItems / pageItems
+		scope.gotoPage scope.currentPage
+		
+		for num in [0...totalPages]
+			angular.element('.portfolio-paginator').append($compile("<a class='portfolio-paginator-option' ng-click='gotoPage(#{num})'><i class='ion-ios-circle-filled'></i></a>")(scope))
+
+		scope.items.each ()->
 			_this = angular.element @
 			anchor = _this.find 'a'
 			back = _this.find 'div'

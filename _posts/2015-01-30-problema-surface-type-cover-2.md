@@ -1,16 +1,16 @@
 ---
 layout: post
-title:  "Como arreglar el problema entre el Surface y el Type Cover 2"
+title:  "Como arreglar el problema entre Surface y Type Cover 2"
+author: vampaynani
 date:   2015-01-30 00:00:00
 categories: [hardware, gadgets, surface]
 ---
 
-##La historia
 Mi papá se compro una Surface hace unos meses, y después de una tablet Android y un iPad he de decir que esta ha sido por mucho su mejor adquisición, comenzando por el hecho de que no se ha quedado sin usar dos semanas después de haber sido comprada.
 
 Y todo iba perfecto hasta que hace unos días se compro un Type Cover 2 que tiró a la basura todas las ventajas de este dispositivo porque fuera de ser tan fácil como conectar el teclado y comenzar a trabajar con el, la experiencia de usuario se volvió un infierno para el y a varias noches de desvelo seguidas sin conseguir un resultado óptimo.
 
-##Procedimiento y felices por siempre
+##Procedimiento y happy ever after
 Por fortuna después de buscar un rato soluciones en blogs, foros y demás, dimos con la opción que para nosotros fue la correcta y es la que pongo a continuación:
 
 1. Deslizar el dedo desde el borde derecho de la pantalla para que aparezca la barra de Opciones.

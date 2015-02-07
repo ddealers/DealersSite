@@ -10,9 +10,9 @@ twitter_username: bedealers
 github_username:  ddealers
 
 # Build settings
-paginate: 10
 markdown: kramdown
 permalink: pretty
+highlighter: pygments
 
 #Collections
 collections:
