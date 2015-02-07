@@ -596,6 +596,10 @@ section{
 				padding: 1rem;
 				font-size: 0.9rem;
 				text-align: right;
+				@include media-query($x-small){
+					@include flex(1 100%);
+					text-align: center;
+				}
 			}
 		}
 		.social{
