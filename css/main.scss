@@ -431,7 +431,7 @@ section{
 			}
 		}
 		.portfolio-paginator{
-			@include flex(1 100%);
+			@include flex(0 100%);
 			display: flex;
 			display: -webkit-flex;
 			@include justify-content(center);
@@ -663,7 +663,7 @@ section{
 		display: flex;
 		display: -webkit-flex;
 		@include media-query($x-small){
-			@include flex-flow(column);
+			@include flex-flow(column nowrap);
 		}
 		.post-content{
 			@include flex(1 85%);
