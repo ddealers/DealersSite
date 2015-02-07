@@ -547,6 +547,9 @@ section{
 					text-decoration: none;
 					h3{
 						color: $subtitle;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
 					}
 					p{
 						@include opacity(0);
