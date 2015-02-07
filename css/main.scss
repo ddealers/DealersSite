@@ -355,6 +355,9 @@ section{
 				color: white;
 				margin: 0 auto;
 			}
+			@include media-query($x-small){
+				@include flex(2 100%);
+			}
 		}
 		ul{
 			list-style-type: none;
