@@ -674,10 +674,11 @@ section{
 				list-style-type: none;
 				li{
 					a{
-						padding: 1rem 0;
+						padding: 0.5rem;
 						text-decoration: none;
 						color: $menu-link;
 						display: block;
+						font-size: 0.8rem;
 						&:hover{
 							background: $menu-link;
 							color: $digital;
