@@ -337,7 +337,7 @@ section{
 	&#makerz{
 		@include flex-flow(column wrap);
 		title{
-			@include flex(0 100%);
+			//@include flex(0 100%);
 			h2{
 				width: 20%;
 			}
@@ -522,7 +522,7 @@ section{
 		@include flex-flow(column wrap);
 		background: url(../imgs/digicubes.png);
 		title{
-			@include flex(0 100%);
+			//@include flex(0 100%);
 			h2{
 				width: 20%;
 			}
@@ -566,7 +566,7 @@ section{
 		@include flex-flow(column wrap);
 		@include background-size('/imgs/background.jpg');
 		.title{
-			@include flex(0 100%);
+			//@include flex(0 100%);
 			@include align-items(center);
 			h2{
 				margin: 1rem auto;
