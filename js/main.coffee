@@ -1,6 +1,22 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+dealersjs = {}
+dealersjs.mobile = class Mobile
+	@user_agent = navigator.userAgent.toLowerCase()
+	@isIOS = ->
+    	if true in [@isIpad(),@isIphone(), @isIpod()] then true else false
+    @isIpad = ->
+    	@user_agent.indexOf('ipad') > -1
+    @isIphone = ->
+    	@user_agent.indexOf('iphone') > -1
+    @isIpod = ->
+    	@user_agent.indexOf('ipod') > -1
+    @isAndroid = ->
+    	@user_agent.indexOf('android') > -1
+    @isMobile = ->
+    	@user_agent.indexOf('mobile') > -1
+
 app = angular.module 'siteDealers',['ngAnimate']
 app.run()
 .config ($interpolateProvider)->
@@ -64,7 +80,10 @@ app.run()
 			if not isOpen
 				tl.to 'nav', 0.2, {top:-100, ease: Sine.easeOut}
 				tl.to 'aside', 0.2, {width: '100%', ease: Sine.easeIn}
-				tl.staggerFrom 'aside li', 1.2, {transformOrigin:"50% top", rotationX: -45, opacity: 0, ease: Elastic.easeOut}, 0.2
+				if not dealersjs.mobile.isMobile()
+					tl.staggerFrom 'aside li', 1.2, {transformOrigin:"50% top", rotationX: -45, opacity: 0, ease: Elastic.easeOut}, 0.2
+				else
+					tl.staggerFrom 'aside li', 1.2, {opacity: 0, ease: Power2.easeOut}, 0.2
 			isOpen = true
 		closeMenu.on 'click', (e)->
 			e.preventDefault()
