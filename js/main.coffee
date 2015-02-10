@@ -35,7 +35,53 @@ app.run()
 	$scope.hidePortfolio = (e)->
 		e.preventDefault()
 		$scope.portfolioUrl = null
-
+.factory 'utils', ()->
+	_serialize = (obj)->
+		str = []
+		for p of obj
+			if obj.hasOwnProperty p
+	       		str.push encodeURIComponent(p) + "=" + encodeURIComponent(obj[p])
+		str = str.join "&"
+		str = '?'+str
+	serialize: _serialize
+.directive 'socialFb', ($http, $location, utils)->
+	
+	restrict: 'C'
+	link: (scope, elem, attrs)->
+		elem.on 'click', (e)->
+			e.preventDefault()
+			$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
+			.success (data)->
+				request =
+					app_id: '1532245233729879'
+					u: data.id
+				query = utils.serialize request
+				window.open attrs.href+query, 'Facebook', 'height=400, width=600'
+.directive 'socialTw', ($location, $document, utils)->
+	restrict: 'C'
+	link: (scope, elem, attrs)->
+		elem.on 'click', (e)->
+			e.preventDefault()
+			$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
+			.success (data)->
+				request =
+						original_referer: $location.absUrl()
+						text: $document[0].title
+						url: data.id
+						via: 'BeDealers'
+				query = utils.serialize request
+				window.open attrs.href+query, 'Twitter', 'height=400, width=600'
+.directive 'socialGp', ($location, utils)->
+	restrict: 'C'
+	link: (scope, elem, attrs)->
+		elem.on 'click', (e)->
+			e.preventDefault()
+			$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
+			.success (data)->
+				request =
+					url: data.id
+				query = utils.serialize request
+				window.open attrs.href+query, 'Google Plus', 'height=400, width=600'
 .directive 'section', ($window, $document)->
 	restrict: 'E'
 	link: (scope, elem, attrs)->

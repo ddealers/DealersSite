@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="siteDealers">
   {% include head.html %}
+  <meta property="og:title" content="{{ site.title }}"/>
+  <meta property="og:description" content="{{ page.excerpt }}"/>
+  <meta property="og:url" content="{{ page.url | prepend:site.url }}"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:author" content="{{ page.author }}"/>
+  <meta property="og:article:tag" content="{{ page.categories | join: ',' }}"/>
+  <meta property="og:website" content="{{ "/#/blog" | prepend:site.url }}"/>
   <body class="post-container">
     <header class="post-header">
-      <a href="{{ "#/blog" | prepend:site.url }}"><img class="fade menu-logo" src="/imgs/logo.svg" alt="{{ site.title }}"></a>
+      <a href="{{ "/#/blog" | prepend:site.url }}"><img class="fade menu-logo" src="/imgs/logo.svg" alt="{{ site.title }}"></a>
     </header>
     <div class="page-content">
       <div class="wrapper">
@@ -15,6 +22,7 @@
             </header>
             <article class="post-body">
               {{ content }}
+              {% include social.html %}
             </article>
           </div>
           <aside>

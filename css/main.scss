@@ -535,6 +535,7 @@ section{
 		}
 		.blog-list{
 			list-style-type: none;
+			width: 100%;
 			li{
 				margin: 0.5rem 0;
 				padding: 1rem;
@@ -645,7 +646,7 @@ section{
 	}
 }
 .post-container{
-	background: url(../imgs/digicubes.png);
+	background: url(../imgs/bnbackground.png) top center fixed;
 	> header{
 		position: fixed;
 		width: 100%;
@@ -702,6 +703,12 @@ section{
 				.highlight{
 					margin: 1rem;
 					overflow: auto;
+				}
+				.social-data{
+					float: right;
+					a{
+						margin-left: 0.5rem;
+					}
 				}
 			}
 		}
