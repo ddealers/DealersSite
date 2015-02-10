@@ -82,6 +82,17 @@ app.run()
 				url: $location.absUrl()#data.id
 			query = utils.serialize request
 			window.open attrs.href+query, 'Google Plus', 'height=400, width=600'
+.directive 'socialIn', ($http, $location, utils)->
+	restrict: 'C'
+	link: (scope, elem, attrs)->
+		elem.on 'click', (e)->
+			request = 
+				mini: true
+				url: $location.absUrl()
+				title: $document[0].title
+				source: 'Digital Dealers'
+			query = utils.serialize request
+			window.open attrs.href+query, 'Linkedin', 'height=400, width=600'
 .directive 'section', ($window, $document)->
 	restrict: 'E'
 	link: (scope, elem, attrs)->
