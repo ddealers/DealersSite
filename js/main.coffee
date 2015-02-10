@@ -57,7 +57,7 @@ app.run()
 					u: data.id
 				query = utils.serialize request
 				window.open attrs.href+query, 'Facebook', 'height=400, width=600'
-.directive 'socialTw', ($location, $document, utils)->
+.directive 'socialTw', ($http, $location, $document, utils)->
 	restrict: 'C'
 	link: (scope, elem, attrs)->
 		elem.on 'click', (e)->
@@ -71,7 +71,7 @@ app.run()
 						via: 'BeDealers'
 				query = utils.serialize request
 				window.open attrs.href+query, 'Twitter', 'height=400, width=600'
-.directive 'socialGp', ($location, utils)->
+.directive 'socialGp', ($http, $location, utils)->
 	restrict: 'C'
 	link: (scope, elem, attrs)->
 		elem.on 'click', (e)->
