@@ -50,38 +50,38 @@ app.run()
 	link: (scope, elem, attrs)->
 		elem.on 'click', (e)->
 			e.preventDefault()
-			$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
-			.success (data)->
-				request =
-					app_id: '1532245233729879'
-					u: data.id
-				query = utils.serialize request
-				window.open attrs.href+query, 'Facebook', 'height=400, width=600'
+			#$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
+			#.success (data)->
+			request =
+				app_id: '1532245233729879'
+				u: $location.absUrl()#data.id
+			query = utils.serialize request
+			window.open attrs.href+query, 'Facebook', 'height=400, width=600'
 .directive 'socialTw', ($http, $location, $document, utils)->
 	restrict: 'C'
 	link: (scope, elem, attrs)->
 		elem.on 'click', (e)->
 			e.preventDefault()
-			$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
-			.success (data)->
-				request =
-						original_referer: $location.absUrl()
-						text: $document[0].title
-						url: data.id
-						via: 'BeDealers'
-				query = utils.serialize request
-				window.open attrs.href+query, 'Twitter', 'height=400, width=600'
+			#$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
+			#.success (data)->
+			request =
+					original_referer: $location.absUrl()
+					text: $document[0].title
+					url: $location.absUrl()#data.id
+					via: 'BeDealers'
+			query = utils.serialize request
+			window.open attrs.href+query, 'Twitter', 'height=400, width=600'
 .directive 'socialGp', ($http, $location, utils)->
 	restrict: 'C'
 	link: (scope, elem, attrs)->
 		elem.on 'click', (e)->
 			e.preventDefault()
-			$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
-			.success (data)->
-				request =
-					url: data.id
-				query = utils.serialize request
-				window.open attrs.href+query, 'Google Plus', 'height=400, width=600'
+			#$http.post 'https://www.googleapis.com/urlshortener/v1/url', {longUrl: $location.absUrl()}
+			#.success (data)->
+			request =
+				url: $location.absUrl()#data.id
+			query = utils.serialize request
+			window.open attrs.href+query, 'Google Plus', 'height=400, width=600'
 .directive 'section', ($window, $document)->
 	restrict: 'E'
 	link: (scope, elem, attrs)->
