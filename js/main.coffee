@@ -17,10 +17,14 @@ dealersjs.mobile = class Mobile
     @isMobile = ->
     	@user_agent.indexOf('mobile') > -1
 
-app = angular.module 'siteDealers',['ngAnimate']
+app = angular.module 'siteDealers',['ngAnimate','uiGmapgoogle-maps']
 app.run()
-.config ($interpolateProvider)->
-	$interpolateProvider.startSymbol('//-').endSymbol('-//');
+.config ($interpolateProvider, uiGmapGoogleMapApiProvider)->
+	$interpolateProvider.startSymbol('//-').endSymbol('-//')
+	uiGmapGoogleMapApiProvider.configure
+        #key: 'your api key',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
 .controller 'HomeController', ($location)->
 	if $location.path()
 		$(window).load ()->
@@ -35,6 +39,23 @@ app.run()
 	$scope.hidePortfolio = (e)->
 		e.preventDefault()
 		$scope.portfolioUrl = null
+.controller 'ContactController', ($scope, uiGmapGoogleMapApi)->
+	uiGmapGoogleMapApi.then (maps)->
+		$scope.map = 
+			center:
+				latitude: 19.514705349999996
+				longitude: -99.0405251
+			zoom: 15
+			marker:
+				id: 0
+				coords: 
+					latitude: 19.516358739628966
+					longitude: -99.04071821904904
+				#options:
+					#draggable: true
+				events:
+					dragend: (marker, eventName, args)->
+						console.log marker.getPosition()
 .factory 'utils', ()->
 	_serialize = (obj)->
 		str = []
