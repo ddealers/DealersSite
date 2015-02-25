@@ -51,11 +51,9 @@ app.run()
 				coords: 
 					latitude: 19.516358739628966
 					longitude: -99.04071821904904
-				#options:
+				options:
+					animation: 1
 					#draggable: true
-				events:
-					dragend: (marker, eventName, args)->
-						console.log marker.getPosition()
 .factory 'utils', ()->
 	_serialize = (obj)->
 		str = []
