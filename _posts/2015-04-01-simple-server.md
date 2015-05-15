@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Servidor de prueba en una línea de código"
 author: vampaynani
 date:   2015-04-21 00:00:00

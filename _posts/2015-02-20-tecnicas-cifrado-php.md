@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Técnicas de cifrado con PHP"
 author: vampaynani
 date:   2015-02-20 00:00:00

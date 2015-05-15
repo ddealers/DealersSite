@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Instalar el soporte para Sqlite3 en PHP para PDO"
 author: vampaynani
 date:   2015-01-19 00:00:00

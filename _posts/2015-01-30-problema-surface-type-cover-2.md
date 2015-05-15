@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Como arreglar el problema entre Surface y Type Cover 2"
 author: vampaynani
 date:   2015-01-30 00:00:00

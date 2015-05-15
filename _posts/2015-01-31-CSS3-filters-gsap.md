@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "CSS3 Filters con GSAP"
 author: vampaynani
 date:   2015-01-31 03:36:00
