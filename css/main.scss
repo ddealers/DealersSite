@@ -712,13 +712,17 @@ section{
         			font-weight: bold;
 				}
 				p{
-					font-size: 1.5rem;
+					font-size: 1.2rem;
+					margin: 1em 0;
+					strong{
+						font-weight: bold;
+					}
 				}
 				li{
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 				}
 				a{
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 					color: $digital;
 				}
 				.highlight{
