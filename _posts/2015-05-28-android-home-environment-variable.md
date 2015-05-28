@@ -38,8 +38,8 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 {% endhighlight %}
 Para cerrarlo, presionar **ctrl+x** después **Y** y por último, **enter**.
 
-Para corroborar el path de **ANDROID_HOME**, revisar la parte superior del **SDK Manager**, el campo de **SDK Path**:
-
+Para corroborar el path de **ANDROID_HOME**, revisar en la parte superior del **SDK Manager** el campo de **SDK Path**:
+![SDK Path](/imgs/blog/2015_05_28_01.32.54.png)
 Cerrar esa ventana de la terminal y abrir una nueva para que el path se refresque e incluya las tools de Android que se han agregado.
 
 Para probar y de paso saber que dispositivos Android están conectados a la pc y disponibles, tanto reales como virtuales usar la instrucción:
