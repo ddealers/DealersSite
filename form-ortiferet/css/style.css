@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.content {
+	width: 90%;
+	height: 70%;
+  	position: absolute;
+  	right: 0;
+  	left: 0;
+  	top: 0;
+  	bottom: 0;
+  	margin: auto;
+  	border: solid 3px #CBDFEC;
+}
+.form {
+	width: 90%;
+	height: 90%;
+	padding: 12px;
+	right: 0;
+  	left: 0;
+  	top: 0;
+  	bottom: 0;
+  	margin: auto;
+  	position: absolute;
+} 		
+.form input {
+	width: 100%;
+  	border-radius: 10px;
+  	border: 2px solid #CBDFEC;
+  	font-size: 14px;
+  	padding: 10px;
+  	margin: 5px auto;
+  	box-sizing: border-box;
+  	color: #03658C;
+}
+input::-webkit-input-placeholder {
+    color: #03658C;
+}
+.rojo::-webkit-input-placeholder {
+    color: red;
+}
+.comentarios {
+	width: 100%;
+  	border-radius: 10px;
+  	border: 2px solid #CBDFEC;
+  	font-size: 14px;
+  	padding: 10px;
+  	margin: 5px auto;
+  	box-sizing: border-box;
+  	color: #03658C;
+}
+.comentarios::-webkit-input-placeholder {
+    color: #03658C;
+}
+#dat-obli {
+	font-size: 14px;
+  	color: red;
+  	font-family: arial;
+  	text-align: center;
+  	padding-bottom: 10px;
+  	display: none;
+}
+.form-select {
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: #ffffff;
+    overflow: hidden;
+    border: 2px solid #CBDFEC;
+    border-radius: 10px;
+    -moz-transition: box-shadow 0.2s;
+    -o-transition: box-shadow 0.2s;
+    -webkit-transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;
+    margin: 5px auto;
+    position: relative;
+}
+.form-select:after {
+    content: '▾';
+    position: absolute;
+    top: 0;
+    right: 8px;
+    color: #03658C;
+    line-height: 40px;
+    font-size: 20px;
+}
+.form-select:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+#lista-terapias {
+    position: relative;
+    background: transparent;
+    background-image: none;
+    display: block;
+    width: 100%;
+    outline: none;
+    color: #03658C;
+    cursor: pointer;
+    border: none;
+    padding: 10px 10px 10px 5px;
+    text-overflow: '';
+    text-indent: 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    font-size: 12px;
+}
+#lista-terapias option[disabled] {
+    color: #03658C;
+    text-shadow: none;
+    border: none;
+    font-size: 18px;
+} 
+#boton-enviar {
+	width: 50%;
+  	background-color: #03658C;
+  	color: #FFF;
+  	font-size: 12px;
+  	right: 0;
+  	left: 0;
+  	margin: auto;
+  	position: absolute;
+  	cursor: pointer;
+    margin-top: 3px;
+}
+#boton-enviar:hover {
+	background-color: #CBDFEC;
+	color: #03658C; 
+}
