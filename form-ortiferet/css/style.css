@@ -3,7 +3,14 @@
 	padding: 0;
 }
 .content {}
-.form {} 		
+.form {}
+h1{
+  font-size: 19px;
+  color: #03658C;
+  text-align: center;
+  padding: 10px;
+  font-family: Arial, Helvetica, Sans-Serif;
+}
 .form input {
 	width: 100%;
   	border-radius: 10px;
