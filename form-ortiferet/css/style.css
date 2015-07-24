@@ -2,28 +2,8 @@
 	margin: 0;
 	padding: 0;
 }
-.content {
-	width: 90%;
-	height: 70%;
-  	position: absolute;
-  	right: 0;
-  	left: 0;
-  	top: 0;
-  	bottom: 0;
-  	margin: auto;
-  	border: solid 3px #CBDFEC;
-}
-.form {
-	width: 90%;
-	height: 90%;
-	padding: 12px;
-	right: 0;
-  	left: 0;
-  	top: 0;
-  	bottom: 0;
-  	margin: auto;
-  	position: absolute;
-} 		
+.content {}
+.form {} 		
 .form input {
 	width: 100%;
   	border-radius: 10px;
