@@ -1,7 +1,5 @@
-$(document).on("ready",
-	function(){
-		$('#formulario').on("submit", function(event) {
-			event.preventDefault ();
+$(document).on("ready",function(){
+	$('#formulario').on("submit", function(event) {
 		var name = $("#form-name").val();
 		var number = $("form-number").val();
 		var mail = $("#form-mail").val();
@@ -13,6 +11,7 @@ $(document).on("ready",
 			$("#form-name").addClass("rojo");
 			$("#form-name").val("");
 			$("#dat-obli").css({display: "block"});
+			return false;
 		}
 		else {
 			$("#dat-obli").css({display: "none"});
@@ -30,6 +29,6 @@ $(document).on("ready",
 			$(".vacio").css({display: "none"});
 			$(".incorrecto").css({display: "none"});
 			$("#dat-obli").css({display: "none"});
-		}	
+		}
 	});
 });
