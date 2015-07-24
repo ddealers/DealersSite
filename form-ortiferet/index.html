@@ -8,13 +8,13 @@
 	</head>
 	<body>
 		<div class="content">
-			<form method="post" action="/index/form" class="form" id="formulario">
+			<form method="post" action="/send.php" class="form" id="formulario">
 				<input type="text" placeholder="Nombre" name="name" id="form-name">
 				<input type="text" placeholder="Numero Telefonico" name="number" id="form-number">
 				<input type="text" placeholder="Email" name="mail" id="#form-mail">
-				<textarea placeholder="Comentarios" name="comentarios" class="comentarios" rows="8" cols="100"></textarea>
+				<textarea placeholder="Comentarios" name="comments" class="comentarios" rows="8" cols="100"></textarea>
 				<div class="form-select">
-        		  	<select id="lista-terapias">
+        		  	<select name="country" id="lista-terapias">
         		    	<option disabled="disabled" selected="selected">País de Interes</option>
         		    	<option>México</option>
         		    	<option>Panamá</option>
