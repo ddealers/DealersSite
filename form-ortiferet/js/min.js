@@ -1,5 +1,6 @@
 $(document).on("ready",function(){
 	$('#formulario').on("submit", function(event) {
+		/*
 		var name = $("#form-name").val();
 		var number = $("form-number").val();
 		var mail = $("#form-mail").val();
@@ -30,5 +31,6 @@ $(document).on("ready",function(){
 			$(".incorrecto").css({display: "none"});
 			$("#dat-obli").css({display: "none"});
 		}
+		*/
 	});
 });
